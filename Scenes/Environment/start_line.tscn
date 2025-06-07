@@ -147,7 +147,7 @@ script = ExtResource("1_pfnrc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vw7w2")
-animation = &"Idle"
+animation = &"Start"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 13)

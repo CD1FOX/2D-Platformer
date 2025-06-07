@@ -1,10 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://dsnb28ukkayny"]
+[gd_scene load_steps=32 format=3 uid="uid://dsnb28ukkayny"]
 
 [ext_resource type="Script" uid="uid://dy5k0ete5s52r" path="res://Scenes/Entity/Scripts/player.gd" id="1_odi8b"]
 [ext_resource type="Texture2D" uid="uid://osgyr5trdo3i" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Fall (32x32).png" id="2_2roui"]
 [ext_resource type="Texture2D" uid="uid://dptlgep8udxlf" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Idle (32x32).png" id="2_odi8b"]
 [ext_resource type="Texture2D" uid="uid://buaqsfi6f1kov" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Run (32x32).png" id="3_2tr3c"]
 [ext_resource type="Texture2D" uid="uid://duerqm4ej51a2" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Jump (32x32).png" id="4_tydqb"]
+[ext_resource type="PackedScene" uid="uid://phrluffpoktq" path="res://Scenes/UI/StopWatch.tscn" id="6_tydqb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tr3c"]
 atlas = ExtResource("2_odi8b")
@@ -217,3 +218,9 @@ autoplay = "Idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.96046e-07, 0)
 shape = SubResource("CapsuleShape2D_odi8b")
+
+[node name="StopWatch" parent="." instance=ExtResource("6_tydqb")]
+offset_left = -75.0
+offset_top = -610.0
+offset_right = -75.0
+offset_bottom = -610.0
