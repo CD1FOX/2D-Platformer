@@ -1,4 +1,4 @@
 extends Node
 
 var score = 0
-var starting = false
+var running: bool = false
