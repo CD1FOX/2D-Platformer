@@ -14,8 +14,6 @@ func _process(delta: float) -> void:
 		duration = 5 
 		already_stepped = false
 		
-	
-	print(duration, animated_sprite.animation)
 
 
 func _on_body_entered(body: Node2D) -> void:
