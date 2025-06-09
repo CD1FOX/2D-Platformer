@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dsnb28ukkayny"]
+[gd_scene load_steps=34 format=3 uid="uid://dsnb28ukkayny"]
 
 [ext_resource type="Script" uid="uid://dy5k0ete5s52r" path="res://Scenes/Entity/Scripts/player.gd" id="1_odi8b"]
 [ext_resource type="Texture2D" uid="uid://osgyr5trdo3i" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Fall (32x32).png" id="2_2roui"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://duerqm4ej51a2" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Jump (32x32).png" id="4_tydqb"]
 [ext_resource type="PackedScene" uid="uid://phrluffpoktq" path="res://Scenes/UI/StopWatch.tscn" id="6_tydqb"]
 [ext_resource type="Script" uid="uid://dxrlu6wt6syry" path="res://Scenes/Entity/Scripts/score.gd" id="7_7lf8o"]
+[ext_resource type="PackedScene" uid="uid://dxcqrk78eqrqy" path="res://Scenes/UI/health_bar.tscn" id="8_ox502"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tr3c"]
 atlas = ExtResource("2_odi8b")
@@ -234,3 +235,9 @@ offset_bottom = -561.0
 theme_override_font_sizes/font_size = 50
 text = "Score:"
 script = ExtResource("7_7lf8o")
+
+[node name="HealthBar" parent="." instance=ExtResource("8_ox502")]
+offset_left = -45.0
+offset_top = -95.0
+offset_right = -45.0
+offset_bottom = -95.0
