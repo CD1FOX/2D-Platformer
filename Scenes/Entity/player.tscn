@@ -1,13 +1,42 @@
-[gd_scene load_steps=34 format=3 uid="uid://dsnb28ukkayny"]
+[gd_scene load_steps=42 format=3 uid="uid://dsnb28ukkayny"]
 
 [ext_resource type="Script" uid="uid://dy5k0ete5s52r" path="res://Scenes/Entity/Scripts/player.gd" id="1_odi8b"]
 [ext_resource type="Texture2D" uid="uid://osgyr5trdo3i" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Fall (32x32).png" id="2_2roui"]
 [ext_resource type="Texture2D" uid="uid://dptlgep8udxlf" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Idle (32x32).png" id="2_odi8b"]
+[ext_resource type="Texture2D" uid="uid://dimx4vfyaqu45" path="res://Assets/Pixel Adventure!/Main Characters/Desappearing (96x96).png" id="2_rt8bh"]
 [ext_resource type="Texture2D" uid="uid://buaqsfi6f1kov" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Run (32x32).png" id="3_2tr3c"]
 [ext_resource type="Texture2D" uid="uid://duerqm4ej51a2" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Jump (32x32).png" id="4_tydqb"]
 [ext_resource type="PackedScene" uid="uid://phrluffpoktq" path="res://Scenes/UI/StopWatch.tscn" id="6_tydqb"]
 [ext_resource type="Script" uid="uid://dxrlu6wt6syry" path="res://Scenes/Entity/Scripts/score.gd" id="7_7lf8o"]
 [ext_resource type="PackedScene" uid="uid://dxcqrk78eqrqy" path="res://Scenes/UI/health_bar.tscn" id="8_ox502"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgqkc"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoe36"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk2jl"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k6xi"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddhl"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxmhc"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k56m"]
+atlas = ExtResource("2_rt8bh")
+region = Rect2(576, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2tr3c"]
 atlas = ExtResource("2_odi8b")
@@ -105,6 +134,32 @@ region = Rect2(352, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qgqkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoe36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk2jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k6xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uddhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxmhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k56m")
+}],
+"loop": false,
+"name": &"Disappearing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_2roui")
 }],
 "loop": true,
@@ -199,9 +254,8 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_odi8b"]
-radius = 50.0
-height = 120.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt8bh"]
+size = Vector2(105, 115)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.2, 0.2)
@@ -214,12 +268,15 @@ zoom = Vector2(2.5, 2.5)
 position = Vector2(0, -15)
 scale = Vector2(4.925, 4.925)
 sprite_frames = SubResource("SpriteFrames_d8htt")
-animation = &"Fall"
+animation = &"Disappearing"
 autoplay = "Idle"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5.96046e-07, 0)
-shape = SubResource("CapsuleShape2D_odi8b")
+position = Vector2(2.5, 7.49998)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rt8bh")
 
 [node name="StopWatch" parent="." instance=ExtResource("6_tydqb")]
 offset_left = -75.0

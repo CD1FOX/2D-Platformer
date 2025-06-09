@@ -10,13 +10,13 @@ func _on_body_entered(body):
 	if body.name == "Player" and animated_sprite.animation == "Off":
 		# When player first steps on trap
 		player_on_trap = true
-		activate_trap(body)
+		activate_trap()
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		player_on_trap = false
 
-func activate_trap(player):
+func activate_trap():
 	# Step 1: Play the hit animation (triggering the trap)
 	animated_sprite.play("Hit")
 	await animated_sprite.animation_finished

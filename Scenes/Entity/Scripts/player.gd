@@ -20,10 +20,11 @@ func die():
 		return
 	
 	is_dead = true
-	
-	# Wait briefly before respawning
-	await get_tree().create_timer(1.0).timeout
+	set_physics_process(false)  # Stop movement updates
+	animated_sprite.play("Disappearing")
+	await animated_sprite.animation_finished  # Wait for animation to complete
 	respawn()
+	set_physics_process(true)  # Re-enable movement
 
 func respawn():
 	position = initial_position  # Return to start
@@ -68,6 +69,9 @@ func jump_logic():
 func _physics_process(delta: float) -> void:
 	if Global.health <= 0.0:
 		die()
+	
+	if is_dead:
+		return
 	
 	player_movement()
 	gravity_logic(delta)
