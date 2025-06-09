@@ -3,12 +3,33 @@ extends CharacterBody2D
 var speed = 220
 var gravity_force = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
+var initial_position = Vector2.ZERO
+var is_dead = false
 
 #Jumping Logic
 var jump_power = -320
 var max_jump = 2
 var jump_left = 2
 var was_on_floor = false
+
+func _ready():
+	initial_position = position  # Remember spawn point
+
+func die():
+	if is_dead:
+		return
+	
+	is_dead = true
+	
+	# Wait briefly before respawning
+	await get_tree().create_timer(1.0).timeout
+	respawn()
+
+func respawn():
+	position = initial_position  # Return to start
+	is_dead = false
+	# Reset any player state
+	Global.health = 100
 
 func player_movement():
 	var direction = 0
@@ -45,12 +66,16 @@ func jump_logic():
 		jump_left -= 1
 
 func _physics_process(delta: float) -> void:
+	if Global.health <= 0.0:
+		die()
+	
 	player_movement()
 	gravity_logic(delta)
 	jump_logic()
 	
 	if is_on_floor() and not was_on_floor:
 		jump_left = max_jump
+	
 	
 	was_on_floor = is_on_floor()
 	

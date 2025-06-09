@@ -29,7 +29,13 @@ func check_collisions() -> void:
 	if right_raycast.is_colliding() and right_raycast.get_collider() is TileMapLayer:
 		direction = -1
 		current_speed = initial_speed  # Reset speed on direction change
-
 	if left_raycast.is_colliding() and left_raycast.get_collider() is TileMapLayer:
 		direction = 1
 		current_speed = initial_speed  # Reset speed on direction change
+	
+	while left_raycast.is_colliding() and left_raycast.get_collider() is CharacterBody2D:
+		Global.health -= 1 * get_process_delta_time()
+		await get_tree().process_frame
+	while right_raycast.is_colliding() and right_raycast.get_collider() is CharacterBody2D:
+		Global.health -= 1 * get_process_delta_time()
+		await get_tree().process_frame
