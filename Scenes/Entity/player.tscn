@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dsnb28ukkayny"]
+[gd_scene load_steps=43 format=3 uid="uid://dsnb28ukkayny"]
 
 [ext_resource type="Script" uid="uid://dy5k0ete5s52r" path="res://Scenes/Entity/Scripts/player.gd" id="1_odi8b"]
 [ext_resource type="Texture2D" uid="uid://osgyr5trdo3i" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Fall (32x32).png" id="2_2roui"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://phrluffpoktq" path="res://Scenes/UI/StopWatch.tscn" id="6_tydqb"]
 [ext_resource type="Script" uid="uid://dxrlu6wt6syry" path="res://Scenes/Entity/Scripts/score.gd" id="7_7lf8o"]
 [ext_resource type="PackedScene" uid="uid://dxcqrk78eqrqy" path="res://Scenes/UI/health_bar.tscn" id="8_ox502"]
+[ext_resource type="PackedScene" uid="uid://kvblyv4cn6y3" path="res://Scenes/UI/heart.tscn" id="10_20bu7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgqkc"]
 atlas = ExtResource("2_rt8bh")
@@ -275,7 +276,6 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, 7.49998)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_rt8bh")
 
 [node name="StopWatch" parent="." instance=ExtResource("6_tydqb")]
@@ -298,3 +298,6 @@ offset_left = -45.0
 offset_top = -95.0
 offset_right = -45.0
 offset_bottom = -95.0
+
+[node name="Heart" parent="." instance=ExtResource("10_20bu7")]
+position = Vector2(-1110, -535)

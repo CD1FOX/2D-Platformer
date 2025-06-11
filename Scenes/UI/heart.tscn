@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://kvblyv4cn6y3"]
+
+[ext_resource type="Texture2D" uid="uid://d2hy3yjlfrre2" path="res://Assets/pixel_heart_full.png" id="1_fals4"]
+[ext_resource type="Script" uid="uid://bb4w8ulx5qkhv" path="res://Scenes/UI/Scripts/heart.gd" id="1_yapju"]
+[ext_resource type="Texture2D" uid="uid://bl2cipegss6t2" path="res://Assets/pixel_empty.png" id="2_yapju"]
+
+[node name="Heart" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_yapju")
+
+[node name="Heart1" type="Node2D" parent="."]
+
+[node name="PixelHeartFull" type="Sprite2D" parent="Heart1"]
+texture = ExtResource("1_fals4")
+
+[node name="PixelEmpty" type="Sprite2D" parent="Heart1"]
+texture = ExtResource("2_yapju")
+
+[node name="Heart2" type="Node2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="PixelHeartFull" type="Sprite2D" parent="Heart2"]
+texture = ExtResource("1_fals4")
+
+[node name="PixelEmpty" type="Sprite2D" parent="Heart2"]
+texture = ExtResource("2_yapju")
+
+[node name="Heart3" type="Node2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="PixelHeartFull" type="Sprite2D" parent="Heart3"]
+texture = ExtResource("1_fals4")
+
+[node name="PixelEmpty" type="Sprite2D" parent="Heart3"]
+texture = ExtResource("2_yapju")

@@ -7,8 +7,11 @@ extends CharacterBody2D
 @onready var right_raycast: RayCast2D = $RightDetector
 @onready var left_raycast: RayCast2D = $LeftDetector
 
+
+
 var current_speed: float = 0.0
 var direction: int = 1  # Start moving to the right
+
 
 func _physics_process(delta: float) -> void:
 	update_raycast()
@@ -28,14 +31,17 @@ func update_raycast() -> void:
 func check_collisions() -> void:
 	if right_raycast.is_colliding() and right_raycast.get_collider() is TileMapLayer:
 		direction = -1
-		current_speed = initial_speed  # Reset speed on direction change
+		current_speed = initial_speed
+
 	if left_raycast.is_colliding() and left_raycast.get_collider() is TileMapLayer:
 		direction = 1
-		current_speed = initial_speed  # Reset speed on direction change
-	
-	while left_raycast.is_colliding() and left_raycast.get_collider() is CharacterBody2D:
-		Global.health -= 1 * get_process_delta_time()
-		await get_tree().process_frame
-	while right_raycast.is_colliding() and right_raycast.get_collider() is CharacterBody2D:
-		Global.health -= 1 * get_process_delta_time()
-		await get_tree().process_frame
+		current_speed = initial_speed
+
+	# ✅ Only damage the player if still alive
+	if Global.health >= 0:
+		var player_left = left_raycast.get_collider()
+		var player_right = right_raycast.get_collider()
+		if player_left is CharacterBody2D and player_left.has_method("die"):
+			player_left.die()
+		if player_right is CharacterBody2D and player_right.has_method("die"):
+			player_right.die()

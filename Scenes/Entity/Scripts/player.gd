@@ -19,6 +19,7 @@ func die():
 	if is_dead:
 		return
 	
+	Global.current_health -= 1
 	is_dead = true
 	set_physics_process(false)  # Stop movement updates
 	animated_sprite.play("Disappearing")
