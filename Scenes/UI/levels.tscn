@@ -1,0 +1,336 @@
+[gd_scene load_steps=44 format=3 uid="uid://bvw8d1h1n1m6t"]
+
+[ext_resource type="Script" uid="uid://q6x2555t51nf" path="res://Scenes/UI/Scripts/levels.gd" id="1_4d0vt"]
+[ext_resource type="Texture2D" uid="uid://bibkk5ub8d8ab" path="res://Assets/Pixel Adventure!/Background/Brown.png" id="2_rgx8q"]
+[ext_resource type="Texture2D" uid="uid://tf5xsywuf8we" path="res://Assets/Pixel Adventure!/Menu/Buttons/Levels.png" id="3_h6h8h"]
+[ext_resource type="Texture2D" uid="uid://cr1itgpsbvm61" path="res://Assets/Pixel Adventure!/Menu/Levels/01.png" id="4_42pcm"]
+[ext_resource type="Texture2D" uid="uid://dxde5ah755682" path="res://Assets/Pixel Adventure!/Menu/Levels/02.png" id="5_khdl1"]
+[ext_resource type="Texture2D" uid="uid://cc28kcxfaydsi" path="res://Assets/Pixel Adventure!/Menu/Levels/03.png" id="6_xmmpo"]
+[ext_resource type="Texture2D" uid="uid://by3dn4omw7peq" path="res://Assets/Pixel Adventure!/Menu/Levels/04.png" id="7_oq3uo"]
+[ext_resource type="Texture2D" uid="uid://bkd7dq2k1xokg" path="res://Assets/Pixel Adventure!/Menu/Levels/05.png" id="8_y64ec"]
+[ext_resource type="Texture2D" uid="uid://ba0hdn5xcawqj" path="res://Assets/Pixel Adventure!/Menu/Levels/06.png" id="9_nosdu"]
+[ext_resource type="Texture2D" uid="uid://dcjjbc2knn5xs" path="res://Assets/Pixel Adventure!/Menu/Levels/07.png" id="10_i0qva"]
+[ext_resource type="Texture2D" uid="uid://138esvq6paoc" path="res://Assets/Pixel Adventure!/Menu/Levels/08.png" id="11_7a46h"]
+[ext_resource type="Texture2D" uid="uid://ohdw4y3goqq1" path="res://Assets/Pixel Adventure!/Menu/Levels/09.png" id="12_k48bd"]
+[ext_resource type="Texture2D" uid="uid://l8cm1n5p4tmm" path="res://Assets/Pixel Adventure!/Menu/Levels/10.png" id="13_3uxfa"]
+[ext_resource type="Texture2D" uid="uid://d0kgxfoernccn" path="res://Assets/Pixel Adventure!/Menu/Levels/11.png" id="14_3rtrk"]
+[ext_resource type="Texture2D" uid="uid://ds3e3xjbarlky" path="res://Assets/Pixel Adventure!/Menu/Levels/12.png" id="15_lb6dt"]
+[ext_resource type="Texture2D" uid="uid://ck6g656iohxg4" path="res://Assets/Pixel Adventure!/Menu/Levels/13.png" id="16_yu6jp"]
+[ext_resource type="Texture2D" uid="uid://bifnnxnc5mi8r" path="res://Assets/Pixel Adventure!/Menu/Levels/14.png" id="17_8e85q"]
+[ext_resource type="Texture2D" uid="uid://4v4x8g66iqil" path="res://Assets/Pixel Adventure!/Menu/Levels/15.png" id="18_e32qh"]
+[ext_resource type="Texture2D" uid="uid://bfk84owjusiqv" path="res://Assets/Pixel Adventure!/Menu/Levels/16.png" id="19_p5dph"]
+[ext_resource type="Texture2D" uid="uid://cnwb6jcv6t13i" path="res://Assets/Pixel Adventure!/Menu/Levels/17.png" id="20_iuutu"]
+[ext_resource type="Texture2D" uid="uid://c0xq0j2jhbkmq" path="res://Assets/Pixel Adventure!/Menu/Levels/18.png" id="21_pepv7"]
+[ext_resource type="Texture2D" uid="uid://0s4jwi2301w2" path="res://Assets/Pixel Adventure!/Menu/Levels/19.png" id="22_8447b"]
+[ext_resource type="Texture2D" uid="uid://cr1obl1loil81" path="res://Assets/Pixel Adventure!/Menu/Levels/20.png" id="23_k8yfr"]
+[ext_resource type="Texture2D" uid="uid://b2rrdl07g8mbx" path="res://Assets/Pixel Adventure!/Menu/Levels/21.png" id="24_1y5gy"]
+[ext_resource type="Texture2D" uid="uid://bj4dahxsffki4" path="res://Assets/Pixel Adventure!/Menu/Levels/22.png" id="25_5ogkh"]
+[ext_resource type="Texture2D" uid="uid://d225iusfytcc1" path="res://Assets/Pixel Adventure!/Menu/Levels/23.png" id="26_e57aw"]
+[ext_resource type="Texture2D" uid="uid://33si8x438voo" path="res://Assets/Pixel Adventure!/Menu/Levels/24.png" id="27_lmidy"]
+[ext_resource type="Texture2D" uid="uid://cnkdd4eekmboo" path="res://Assets/Pixel Adventure!/Menu/Levels/25.png" id="28_xeu1i"]
+[ext_resource type="Texture2D" uid="uid://5ikwjir3liq1" path="res://Assets/Pixel Adventure!/Menu/Levels/26.png" id="29_4yu7e"]
+[ext_resource type="Texture2D" uid="uid://c8venyng6y76b" path="res://Assets/Pixel Adventure!/Menu/Levels/27.png" id="30_ql7ed"]
+[ext_resource type="Texture2D" uid="uid://bprm4tgsq3dft" path="res://Assets/Pixel Adventure!/Menu/Levels/28.png" id="31_bwhtd"]
+[ext_resource type="Texture2D" uid="uid://dl2mrrfuhdosf" path="res://Assets/Pixel Adventure!/Menu/Levels/29.png" id="32_wqsx2"]
+[ext_resource type="Texture2D" uid="uid://df8hcyj3iauyt" path="res://Assets/Pixel Adventure!/Menu/Levels/30.png" id="33_k4kjf"]
+[ext_resource type="Texture2D" uid="uid://cg65f6inc7fn2" path="res://Assets/Pixel Adventure!/Menu/Levels/31.png" id="34_cf7gj"]
+[ext_resource type="Texture2D" uid="uid://bcpv8usrp2pv7" path="res://Assets/Pixel Adventure!/Menu/Levels/32.png" id="35_hmuie"]
+[ext_resource type="Texture2D" uid="uid://dohdl8x7qwxke" path="res://Assets/Pixel Adventure!/Menu/Levels/33.png" id="36_l3pmj"]
+[ext_resource type="Texture2D" uid="uid://buom4eqnqjvcc" path="res://Assets/Pixel Adventure!/Menu/Levels/34.png" id="37_edl6x"]
+[ext_resource type="Texture2D" uid="uid://caq0xjdj3egj1" path="res://Assets/Pixel Adventure!/Menu/Levels/35.png" id="38_egtic"]
+[ext_resource type="Texture2D" uid="uid://cd5qt86caso8y" path="res://Assets/Pixel Adventure!/Menu/Levels/36.png" id="39_iunqy"]
+[ext_resource type="Texture2D" uid="uid://p3is4c432sft" path="res://Assets/Pixel Adventure!/Menu/Buttons/Previous.png" id="40_a3y3i"]
+[ext_resource type="Texture2D" uid="uid://ce7yabj7spg6f" path="res://Assets/Pixel Adventure!/Menu/Buttons/Play.png" id="41_irlr8"]
+[ext_resource type="Texture2D" uid="uid://cvtal1eehr2s0" path="res://Assets/Pixel Adventure!/Menu/Buttons/Next.png" id="42_lnfuv"]
+[ext_resource type="Texture2D" uid="uid://b64tugi1votl2" path="res://Assets/Pixel Adventure!/Menu/Buttons/Back.png" id="43_le7lr"]
+
+[node name="Levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4d0vt")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_rgx8q")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 1.0
+offset_right = 637.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Levels"
+metadata/_edit_lock_ = true
+
+[node name="Levels" type="Sprite2D" parent="."]
+position = Vector2(453, 37)
+scale = Vector2(2, 2)
+texture = ExtResource("3_h6h8h")
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 71.0
+offset_right = 1096.0
+offset_bottom = 614.0
+color = Color(0, 0, 0, 0.690196)
+metadata/_edit_lock_ = true
+
+[node name="Level1-12" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 89.0
+offset_right = 319.0
+offset_bottom = 148.0
+scale = Vector2(6.7355, 6.37951)
+theme_override_constants/h_separation = 10
+columns = 4
+
+[node name="Level1" type="TextureButton" parent="Level1-12"]
+layout_mode = 2
+texture_normal = ExtResource("4_42pcm")
+stretch_mode = 0
+
+[node name="Level2" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("5_khdl1")
+
+[node name="Level3" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("6_xmmpo")
+
+[node name="Level4" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("7_oq3uo")
+
+[node name="Level5" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("8_y64ec")
+
+[node name="Level6" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("9_nosdu")
+
+[node name="Level7" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("10_i0qva")
+
+[node name="Level8" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("11_7a46h")
+
+[node name="Level9" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("12_k48bd")
+
+[node name="Level10" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("13_3uxfa")
+
+[node name="Level11" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("14_3rtrk")
+
+[node name="Level12" type="TextureButton" parent="Level1-12"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("15_lb6dt")
+
+[node name="Level13-24" type="GridContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 213.0
+offset_top = 89.0
+offset_right = 319.0
+offset_bottom = 148.0
+scale = Vector2(6.7355, 6.37951)
+theme_override_constants/h_separation = 10
+columns = 4
+
+[node name="Level13" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("16_yu6jp")
+stretch_mode = 0
+
+[node name="Level14" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("17_8e85q")
+
+[node name="Level15" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("18_e32qh")
+
+[node name="Level16" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("19_p5dph")
+
+[node name="Level17" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("20_iuutu")
+
+[node name="Level18" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("21_pepv7")
+
+[node name="Level19" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("22_8447b")
+
+[node name="Level20" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("23_k8yfr")
+
+[node name="Level21" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("24_1y5gy")
+
+[node name="Level22" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("25_5ogkh")
+
+[node name="Level23" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("26_e57aw")
+
+[node name="Level24" type="TextureButton" parent="Level13-24"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("27_lmidy")
+
+[node name="Level25-36" type="GridContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 213.0
+offset_top = 89.0
+offset_right = 319.0
+offset_bottom = 148.0
+scale = Vector2(6.7355, 6.37951)
+theme_override_constants/h_separation = 10
+columns = 4
+
+[node name="Level25" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("28_xeu1i")
+stretch_mode = 0
+
+[node name="Level26" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("29_4yu7e")
+
+[node name="Level27" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("30_ql7ed")
+
+[node name="Level28" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("31_bwhtd")
+
+[node name="Level29" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("32_wqsx2")
+
+[node name="Level30" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("33_k4kjf")
+
+[node name="Level31" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("34_cf7gj")
+
+[node name="Level32" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("35_hmuie")
+
+[node name="Level33" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("36_l3pmj")
+
+[node name="Level34" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("37_edl6x")
+
+[node name="Level35" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("38_egtic")
+
+[node name="Level36" type="TextureButton" parent="Level25-36"]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 2
+texture_normal = ExtResource("39_iunqy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 387.0
+offset_top = 481.0
+offset_right = 458.0
+offset_bottom = 503.0
+scale = Vector2(5.52922, 4.81294)
+
+[node name="Previous" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("40_a3y3i")
+
+[node name="Play" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("41_irlr8")
+
+[node name="Next" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("42_lnfuv")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 89.0
+offset_right = 87.0
+offset_bottom = 105.0
+scale = Vector2(5.22429, 4.33332)
+texture_normal = ExtResource("43_le7lr")
+
+[connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]

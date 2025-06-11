@@ -1,0 +1,45 @@
+extends Control
+
+@onready var level1_to_12 = $"Level1-12"
+@onready var level13_to_24 = $"Level13-24"  # ✅ Fixed typo in name
+@onready var level25_to_36 = $"Level25-36"
+
+var current_scene_counter = 1
+
+func _ready():
+	update_visible_levels()
+	update_level_visibility()
+
+func _on_next_pressed() -> void:
+	if current_scene_counter < 3:
+		current_scene_counter += 1
+		update_visible_levels()
+
+func _on_previous_pressed() -> void:
+	if current_scene_counter > 1:
+		current_scene_counter -= 1
+		update_visible_levels()
+
+func update_visible_levels():
+	print("Current page:", current_scene_counter)
+	level1_to_12.visible = current_scene_counter == 1
+	level13_to_24.visible = current_scene_counter == 2
+	level25_to_36.visible = current_scene_counter == 3
+
+func update_level_visibility():
+	for i in range(1, 37):  # Level 1 to 36
+		var level_button_name = "Level%d" % i
+		var level_button = find_child(level_button_name, true, false)
+
+		if level_button:
+			if i <= Global.last_unlocked_level:
+				level_button.disabled = false
+				level_button.modulate = Color(1, 1, 1, 1)  # Full brightness ✅
+			else:
+				level_button.disabled = true
+				level_button.modulate = Color(1, 1, 1, 0.5)  # Dimmed ✅
+
+
+func _on_play_pressed() -> void:
+	Global.last_unlocked_level += 1
+	Global.save_progress()

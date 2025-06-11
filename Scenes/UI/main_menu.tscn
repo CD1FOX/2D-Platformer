@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuncw35e7y341"]
+
+[ext_resource type="Texture2D" uid="uid://bbladcvjsnc1n" path="res://Assets/Pixel Adventure!/Background/Blue.png" id="1_mrfpk"]
+[ext_resource type="Texture2D" uid="uid://ce7yabj7spg6f" path="res://Assets/Pixel Adventure!/Menu/Buttons/Play.png" id="2_4pqbp"]
+[ext_resource type="Texture2D" uid="uid://7ksodkt8whgq" path="res://Assets/Pixel Adventure!/Menu/Buttons/Settings.png" id="3_gih0s"]
+[ext_resource type="Texture2D" uid="uid://cumqdop2uaapu" path="res://Assets/Pixel Adventure!/Menu/Buttons/Achievements.png" id="4_k33u3"]
+[ext_resource type="Texture2D" uid="uid://cxtbdkuus722w" path="res://Assets/Pixel Adventure!/Menu/Buttons/Close.png" id="5_lrjdf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_mrfpk")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 147.0
+offset_right = 772.0
+offset_bottom = 407.0
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Play"
+metadata/_edit_lock_ = true
+
+[node name="PlaySprite" type="Sprite2D" parent="VBoxContainer/Play"]
+position = Vector2(162, 26)
+scale = Vector2(2, 2)
+texture = ExtResource("2_4pqbp")
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="Sprite2D" parent="VBoxContainer/Settings"]
+position = Vector2(138, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("3_gih0s")
+
+[node name="Achievements" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Achievements"
+metadata/_edit_lock_ = true
+
+[node name="Achievements" type="Sprite2D" parent="VBoxContainer/Achievements"]
+position = Vector2(96, 25)
+scale = Vector2(2, 2)
+texture = ExtResource("4_k33u3")
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+metadata/_edit_lock_ = true
+
+[node name="Close" type="Sprite2D" parent="VBoxContainer/Exit"]
+position = Vector2(172, 28)
+scale = Vector2(2, 2)
+texture = ExtResource("5_lrjdf")
