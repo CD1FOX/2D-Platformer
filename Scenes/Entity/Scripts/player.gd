@@ -19,6 +19,7 @@ func die():
 	if is_dead:
 		return
 	
+	$CollisionShape2D.disabled = true
 	Global.current_health -= 1
 	is_dead = true
 	set_physics_process(false)  # Stop movement updates
@@ -26,6 +27,7 @@ func die():
 	await animated_sprite.animation_finished  # Wait for animation to complete
 	respawn()
 	set_physics_process(true)  # Re-enable movement
+	$CollisionShape2D.disabled = false
 
 func respawn():
 	position = initial_position  # Return to start

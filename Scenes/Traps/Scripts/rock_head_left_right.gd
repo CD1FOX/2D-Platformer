@@ -37,11 +37,13 @@ func check_collisions() -> void:
 		direction = 1
 		current_speed = initial_speed
 
-	# ✅ Only damage the player if still alive
-	if Global.health >= 0:
+	# Only damage actual player and only if they're alive
+	if left_raycast.is_colliding():
 		var player_left = left_raycast.get_collider()
-		var player_right = right_raycast.get_collider()
-		if player_left is CharacterBody2D and player_left.has_method("die"):
+		if player_left.is_in_group("Player") and not player_left.is_dead:
 			player_left.die()
-		if player_right is CharacterBody2D and player_right.has_method("die"):
+
+	if right_raycast.is_colliding():
+		var player_right = right_raycast.get_collider()
+		if player_right.is_in_group("Player") and not player_right.is_dead:
 			player_right.die()
