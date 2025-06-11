@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcc7ji67pljqn"]
+
+[ext_resource type="Script" uid="uid://dahblfct03y7a" path="res://Scenes/UI/Scripts/respawn_ui.gd" id="1_axyt4"]
+
+[node name="RespawnUI" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axyt4")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 78.0
+offset_right = 667.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "YOU DIED!"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.454902)
+metadata/_edit_lock_ = true
+
+[node name="Respawn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 667.0
+offset_top = 308.0
+offset_right = 806.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 30
+text = "Respawn"
+
+[node name="Main Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 308.0
+offset_right = 459.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 30
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Respawn" to="." method="_on_respawn_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]

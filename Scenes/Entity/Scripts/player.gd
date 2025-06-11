@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 220
 var gravity_force = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
-var initial_position = Vector2.ZERO
+var initial_position = Vector2(0, 0)
 var is_dead = false
 
 #Jumping Logic
@@ -12,28 +12,30 @@ var max_jump = 2
 var jump_left = 2
 var was_on_floor = false
 
-func _ready():
-	initial_position = position  # Remember spawn point
-
 func die():
 	if is_dead:
 		return
-	
+
 	$CollisionShape2D.disabled = true
-	Global.current_health -= 1
 	is_dead = true
-	set_physics_process(false)  # Stop movement updates
 	animated_sprite.play("Disappearing")
-	await animated_sprite.animation_finished  # Wait for animation to complete
-	respawn()
-	set_physics_process(true)  # Re-enable movement
-	$CollisionShape2D.disabled = false
+
+	Global.current_health -= 1  # ✅ Deduct 1 heart
+
+	await animated_sprite.animation_finished  # ✅ Wait for death animation
+
+	if Global.current_health <= 0:
+		Global.player_dead = true  # ✅ Show UI and stop everything
+		set_physics_process(false)
+	else:
+		respawn()  # ✅ Respawn only if hearts are left
 
 func respawn():
-	position = initial_position  # Return to start
+	position = initial_position
 	is_dead = false
-	# Reset any player state
 	Global.health = 100
+	$CollisionShape2D.disabled = false
+	set_physics_process(true)
 
 func player_movement():
 	var direction = 0
