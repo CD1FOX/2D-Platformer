@@ -322,7 +322,7 @@ texture_normal = ExtResource("41_irlr8")
 layout_mode = 2
 texture_normal = ExtResource("42_lnfuv")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="BackButton" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 89.0
@@ -334,3 +334,4 @@ texture_normal = ExtResource("43_le7lr")
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

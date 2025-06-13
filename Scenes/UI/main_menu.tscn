@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuncw35e7y341"]
+[gd_scene load_steps=7 format=3 uid="uid://cuncw35e7y341"]
 
+[ext_resource type="Script" uid="uid://cxrgippj4txq0" path="res://Scenes/UI/Scripts/main_menu.gd" id="1_4pqbp"]
 [ext_resource type="Texture2D" uid="uid://bbladcvjsnc1n" path="res://Assets/Pixel Adventure!/Background/Blue.png" id="1_mrfpk"]
 [ext_resource type="Texture2D" uid="uid://ce7yabj7spg6f" path="res://Assets/Pixel Adventure!/Menu/Buttons/Play.png" id="2_4pqbp"]
 [ext_resource type="Texture2D" uid="uid://7ksodkt8whgq" path="res://Assets/Pixel Adventure!/Menu/Buttons/Settings.png" id="3_gih0s"]
@@ -13,6 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4pqbp")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -20,13 +23,14 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_mrfpk")
 stretch_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 325.0
-offset_top = 147.0
-offset_right = 772.0
-offset_bottom = 407.0
+offset_left = 352.0
+offset_top = 175.0
+offset_right = 799.0
+offset_bottom = 435.0
 theme_override_constants/separation = 20
 
 [node name="Play" type="Button" parent="VBoxContainer"]
@@ -76,3 +80,12 @@ metadata/_edit_lock_ = true
 position = Vector2(172, 28)
 scale = Vector2(2, 2)
 texture = ExtResource("5_lrjdf")
+
+[node name="ExitConfirmationDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(327, 100)
+ok_button_text = "Exit"
+dialog_text = "Are you sure you want to exit the game?"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="confirmed" from="ExitConfirmationDialog" to="." method="_on_exit_confirmation_dialog_confirmed"]

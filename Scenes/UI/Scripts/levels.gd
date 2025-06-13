@@ -43,3 +43,7 @@ func update_level_visibility():
 func _on_play_pressed() -> void:
 	Global.last_unlocked_level += 1
 	Global.save_progress()
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
