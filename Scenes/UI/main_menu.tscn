@@ -38,48 +38,32 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Play"
+icon = ExtResource("2_4pqbp")
 metadata/_edit_lock_ = true
-
-[node name="PlaySprite" type="Sprite2D" parent="VBoxContainer/Play"]
-position = Vector2(162, 26)
-scale = Vector2(2, 2)
-texture = ExtResource("2_4pqbp")
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Settings"
+icon = ExtResource("3_gih0s")
 metadata/_edit_lock_ = true
-
-[node name="Settings" type="Sprite2D" parent="VBoxContainer/Settings"]
-position = Vector2(138, 25)
-scale = Vector2(2, 2)
-texture = ExtResource("3_gih0s")
 
 [node name="Achievements" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Achievements"
+icon = ExtResource("4_k33u3")
 metadata/_edit_lock_ = true
-
-[node name="Achievements" type="Sprite2D" parent="VBoxContainer/Achievements"]
-position = Vector2(96, 25)
-scale = Vector2(2, 2)
-texture = ExtResource("4_k33u3")
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Exit"
+icon = ExtResource("5_lrjdf")
 metadata/_edit_lock_ = true
-
-[node name="Close" type="Sprite2D" parent="VBoxContainer/Exit"]
-position = Vector2(172, 28)
-scale = Vector2(2, 2)
-texture = ExtResource("5_lrjdf")
 
 [node name="ExitConfirmationDialog" type="ConfirmationDialog" parent="."]
 size = Vector2i(327, 100)

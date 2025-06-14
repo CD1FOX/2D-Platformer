@@ -78,6 +78,7 @@ func _physics_process(delta: float) -> void:
 	if is_dead:
 		return
 	
+	$Camera2D.zoom = Global.camera_zoom
 	player_movement()
 	gravity_logic(delta)
 	jump_logic()

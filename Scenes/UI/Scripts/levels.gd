@@ -21,7 +21,6 @@ func _on_previous_pressed() -> void:
 		update_visible_levels()
 
 func update_visible_levels():
-	print("Current page:", current_scene_counter)
 	level1_to_12.visible = current_scene_counter == 1
 	level13_to_24.visible = current_scene_counter == 2
 	level25_to_36.visible = current_scene_counter == 3

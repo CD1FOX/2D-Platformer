@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dsnb28ukkayny"]
+[gd_scene load_steps=45 format=3 uid="uid://dsnb28ukkayny"]
 
 [ext_resource type="Script" uid="uid://dy5k0ete5s52r" path="res://Scenes/Entity/Scripts/player.gd" id="1_odi8b"]
 [ext_resource type="Texture2D" uid="uid://osgyr5trdo3i" path="res://Assets/Pixel Adventure!/Main Characters/Virtual Guy/Fall (32x32).png" id="2_2roui"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxcqrk78eqrqy" path="res://Scenes/UI/health_bar.tscn" id="8_ox502"]
 [ext_resource type="PackedScene" uid="uid://kvblyv4cn6y3" path="res://Scenes/UI/heart.tscn" id="10_20bu7"]
 [ext_resource type="PackedScene" uid="uid://dcc7ji67pljqn" path="res://Scenes/UI/respawn_ui.tscn" id="11_iy3c6"]
+[ext_resource type="PackedScene" uid="uid://lrig2etq3v4y" path="res://Scenes/UI/menu.tscn" id="12_gpwe1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgqkc"]
 atlas = ExtResource("2_rt8bh")
@@ -264,7 +265,6 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_odi8b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
@@ -314,3 +314,10 @@ offset_bottom = -650.0
 grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(1.99999, 2)
+
+[node name="Menu" parent="." instance=ExtResource("12_gpwe1")]
+offset_left = -350.0
+offset_top = -415.0
+offset_right = -350.0
+offset_bottom = -415.0
+scale = Vector2(1.76966, 2.29959)

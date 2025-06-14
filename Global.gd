@@ -7,6 +7,7 @@ var current_health = 3
 var player_dead = false
 var last_unlocked_level: int = 1  # Default to level 1
 const SAVE_PATH := "user://save_data.save"
+var camera_zoom = Vector2(2.5, 2.5)
 
 func _ready():
 	load_progress()
