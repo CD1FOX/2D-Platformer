@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7ksodkt8whgq" path="res://Assets/Pixel Adventure!/Menu/Buttons/Settings.png" id="3_rb4ur"]
 [ext_resource type="Texture2D" uid="uid://tf5xsywuf8we" path="res://Assets/Pixel Adventure!/Menu/Buttons/Levels.png" id="4_4twqa"]
 [ext_resource type="Texture2D" uid="uid://cxtbdkuus722w" path="res://Assets/Pixel Adventure!/Menu/Buttons/Close.png" id="5_ttkkf"]
-[ext_resource type="PackedScene" uid="uid://b2nf4mvjc2jg2" path="res://Scenes/UI/settings.tscn" id="7_rb4ur"]
+[ext_resource type="Script" uid="uid://6nblymr3wl40" path="res://Scenes/UI/Scripts/settings.gd" id="7_rb4ur"]
 
 [node name="Menu" type="Control"]
 process_mode = 3
@@ -19,15 +19,13 @@ grow_vertical = 2
 script = ExtResource("1_ugp1d")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 2
 offset_right = 320.0
 offset_bottom = 259.0
 scale = Vector2(1.21175, 1.44309)
 color = Color(0, 0, 0, 0.47451)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
+[node name="Menu" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 17.0
@@ -36,43 +34,64 @@ offset_bottom = 232.0
 scale = Vector2(1.21175, 1.44309)
 theme_override_constants/separation = 15
 
-[node name="ReturnToGame" type="Button" parent="VBoxContainer"]
+[node name="ReturnToGame" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Return to game"
 icon = ExtResource("1_tjcm1")
 metadata/_edit_lock_ = true
 
-[node name="RestartLevel" type="Button" parent="VBoxContainer"]
+[node name="RestartLevel" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Restart Level
 "
 icon = ExtResource("2_ugp1d")
 metadata/_edit_lock_ = true
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Settings"
 icon = ExtResource("3_rb4ur")
 metadata/_edit_lock_ = true
 
-[node name="ReturnToLevelPicker" type="Button" parent="VBoxContainer"]
+[node name="ReturnToLevelPicker" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Return to Level Picker
 "
 icon = ExtResource("4_4twqa")
 metadata/_edit_lock_ = true
 
-[node name="BackToMainMenu" type="Button" parent="VBoxContainer"]
+[node name="BackToMainMenu" type="Button" parent="Menu"]
 layout_mode = 2
 text = "Back to main menu"
 icon = ExtResource("5_ttkkf")
 metadata/_edit_lock_ = true
 
-[node name="Settings" parent="." instance=ExtResource("7_rb4ur")]
-layout_mode = 1
+[node name="Settings" type="VBoxContainer" parent="."]
+visible = false
+offset_left = 23.0
+offset_top = 14.0
+offset_right = 300.0
+offset_bottom = 229.0
+scale = Vector2(1.21175, 1.44309)
+theme_override_constants/separation = 15
+script = ExtResource("7_rb4ur")
 
-[connection signal="pressed" from="VBoxContainer/ReturnToGame" to="." method="_on_return_to_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/RestartLevel" to="." method="_on_restart_level_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/ReturnToLevelPicker" to="." method="_on_return_to_level_picker_pressed"]
-[connection signal="pressed" from="VBoxContainer/BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]
+[node name="Button" type="Button" parent="Settings"]
+layout_mode = 2
+text = "Back"
+icon = ExtResource("1_tjcm1")
+alignment = 0
+
+[node name="Label" type="Label" parent="Settings"]
+layout_mode = 2
+text = "Camera Zoom Slider"
+
+[node name="HSlider" type="HSlider" parent="Settings"]
+layout_mode = 2
+
+[connection signal="pressed" from="Menu/ReturnToGame" to="." method="_on_return_to_game_pressed"]
+[connection signal="pressed" from="Menu/RestartLevel" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="Menu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/ReturnToLevelPicker" to="." method="_on_return_to_level_picker_pressed"]
+[connection signal="pressed" from="Menu/BackToMainMenu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Settings/Button" to="Settings" method="_on_button_pressed"]

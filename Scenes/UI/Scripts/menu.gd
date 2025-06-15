@@ -46,6 +46,5 @@ func _on_back_to_main_menu_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	$ColorRect.visible = false
-	$VBoxContainer.visible = false
 	$Settings.visible = true
+	$Menu.visible = false
