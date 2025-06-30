@@ -2,7 +2,10 @@ extends CharacterBody2D
 
 enum Direction { UP, RIGHT, DOWN, LEFT }
 var current_direction = Direction.UP
-var speed = 100
+var speed = 100  
+var min_speed = 100  
+var max_speed = 750 
+var acceleration = 250  
 var waiting_for_cooldown = false
 
 @onready var raycasts := [
@@ -25,6 +28,10 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		return
 
+	# ✅ Increase speed slowly until max
+	if speed < max_speed:
+		speed += acceleration * _delta 
+
 	# Directional movement
 	var directions = [
 		Vector2(0, -1),
@@ -45,10 +52,10 @@ func _physics_process(_delta: float) -> void:
 
 	move_and_slide()
 
-
 func _on_cooldown_timeout() -> void:
 	waiting_for_cooldown = false
 	current_direction = ((current_direction + 1) % 4) as Direction
+	speed = min_speed 
 
 	# Re-enable all raycasts when completing the full cycle
 	if current_direction == Direction.UP:
