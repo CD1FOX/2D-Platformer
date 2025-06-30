@@ -68,6 +68,7 @@ metadata/_edit_lock_ = true
 
 [node name="Settings" type="VBoxContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 23.0
 offset_top = 14.0
 offset_right = 300.0

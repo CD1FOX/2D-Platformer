@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctf1ywh71w12w"]
+
+[ext_resource type="Texture2D" uid="uid://cyf6rplootwog" path="res://Assets/Pixel Adventure!/Traps/Rock Head/Idle.png" id="1_evh8g"]
+[ext_resource type="Script" uid="uid://b8qpgqo4v8mtn" path="res://Scenes/Traps/Scripts/rock_head_trap.gd" id="1_td1s0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fiiw"]
+size = Vector2(32, 32)
+
+[node name="Rock_Head_Trap" type="CharacterBody2D"]
+scale = Vector2(0.997, 0.997)
+script = ExtResource("1_td1s0")
+
+[node name="Idle" type="Sprite2D" parent="."]
+texture = ExtResource("1_evh8g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3fiiw")
+
+[node name="Down" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16.5)
+
+[node name="Up" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16.5)
+
+[node name="Right" type="RayCast2D" parent="."]
+target_position = Vector2(16.5, 0)
+
+[node name="Left" type="RayCast2D" parent="."]
+target_position = Vector2(-16.5, 0)
+
+[node name="Cooldown_UP" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Cooldown_RIGHT" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Cooldown_DOWN" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Cooldown_LEFT" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Cooldown_UP" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Cooldown_RIGHT" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Cooldown_DOWN" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Cooldown_LEFT" to="." method="_on_cooldown_timeout"]
