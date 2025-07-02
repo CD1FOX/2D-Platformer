@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 220
 var gravity_force = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
-var initial_position = position
+@onready var initial_position = position
 var is_dead = false
 
 #Jumping Logic
@@ -34,7 +34,7 @@ func respawn():
 	position = initial_position
 	is_dead = false
 	Global.health = 100
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	$CollisionShape2D.disabled = false
 	set_physics_process(true)
 
