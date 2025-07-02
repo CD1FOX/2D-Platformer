@@ -200,7 +200,7 @@ sprite_frames = SubResource("SpriteFrames_r32mk")
 animation = &"Blink"
 autoplay = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TrapCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3fiiw")
 
 [node name="Down" type="RayCast2D" parent="."]
