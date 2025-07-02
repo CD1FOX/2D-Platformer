@@ -34,6 +34,7 @@ func respawn():
 	position = initial_position
 	is_dead = false
 	Global.health = 100
+	await get_tree().create_timer(0.5).timeout
 	$CollisionShape2D.disabled = false
 	set_physics_process(true)
 
