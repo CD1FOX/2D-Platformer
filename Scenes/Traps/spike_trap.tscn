@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://1vk0kfwc47jc"]
+
+[ext_resource type="Texture2D" uid="uid://c0ply6tos6m77" path="res://Assets/Pixel Adventure!/Traps/Spikes/Idle.png" id="1_00cxc"]
+[ext_resource type="Script" uid="uid://c44gbrayjcyo0" path="res://Scenes/Traps/Scripts/spike_trap.gd" id="1_jtbjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtbjg"]
+size = Vector2(47, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hrgy"]
+size = Vector2(47, 1)
+
+[node name="SpikeTrap" type="StaticBody2D"]
+script = ExtResource("1_jtbjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_jtbjg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -7.5)
+shape = SubResource("RectangleShape2D_8hrgy")
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(1, -8)
+texture = ExtResource("1_00cxc")
+
+[node name="Idle2" type="Sprite2D" parent="."]
+position = Vector2(-15, -8)
+texture = ExtResource("1_00cxc")
+
+[node name="Idle3" type="Sprite2D" parent="."]
+position = Vector2(17, -8)
+texture = ExtResource("1_00cxc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

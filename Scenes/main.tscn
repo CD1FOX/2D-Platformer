@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b6uxu28xeegam"]
+[gd_scene load_steps=10 format=4 uid="uid://b6uxu28xeegam"]
 
 [ext_resource type="PackedScene" uid="uid://dsnb28ukkayny" path="res://Scenes/Entity/player.tscn" id="1_jjgbg"]
 [ext_resource type="TileSet" uid="uid://6gwu36b18ay5" path="res://Assets/terrain_tilemap.tres" id="2_bo1nx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bauvwlsy2h06x" path="res://Scenes/Environment/end_line.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://qtvjbyicwj56" path="res://Scenes/Traps/fire.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://bmg5gq3p04jac" path="res://Scenes/Environment/checkpoint.tscn" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://1vk0kfwc47jc" path="res://Scenes/Traps/spike_trap.tscn" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ctf1ywh71w12w" path="res://Scenes/Traps/Rock_Head_Trap.tscn" id="9_ynf5e"]
 
 [node name="Main" type="Node2D"]
@@ -36,3 +37,6 @@ position = Vector2(486, 432)
 
 [node name="Rock_Head_Trap" parent="." instance=ExtResource("9_ynf5e")]
 position = Vector2(-560, 432)
+
+[node name="SpikeTrap" parent="." instance=ExtResource("9_hptm8")]
+position = Vector2(-15, 576)
