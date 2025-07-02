@@ -23,6 +23,10 @@ Global="*res://Global.gd"
 
 window/vsync/vsync_mode=0
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
 [global_group]
 
 Player=""

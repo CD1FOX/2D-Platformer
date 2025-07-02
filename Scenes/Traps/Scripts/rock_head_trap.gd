@@ -8,6 +8,8 @@ var max_speed = 750
 var acceleration = 250  
 var waiting_for_cooldown = false
 
+@onready var animation = $AnimatedSprite2D
+
 @onready var raycasts := [
 	$Up,
 	$Right,
@@ -46,6 +48,12 @@ func _physics_process(_delta: float) -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider and not collider.is_in_group("Player"):
+			match current_direction:
+				Direction.UP: animation.play("up_anim")
+				Direction.RIGHT: animation.play("right_anim")
+				Direction.DOWN: animation.play("bottom_anim")
+				Direction.LEFT: animation.play("left_anim")
+			
 			waiting_for_cooldown = true
 			raycast.enabled = false
 			cooldown_timers[current_direction].start()
@@ -53,6 +61,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_cooldown_timeout() -> void:
+	animation.play("Idle")
 	waiting_for_cooldown = false
 	current_direction = ((current_direction + 1) % 4) as Direction
 	speed = min_speed 
@@ -61,3 +70,7 @@ func _on_cooldown_timeout() -> void:
 	if current_direction == Direction.UP:
 		for ray in raycasts:
 			ray.enabled = true
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if waiting_for_cooldown: animation.play("Blink")
