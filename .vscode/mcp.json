@@ -1,9 +1,0 @@
-{
-    "servers": {
-        "Godot": {
-            "type": "stdio",
-            "command": "Godot",
-            "args": []
-        }
-    }
-}
