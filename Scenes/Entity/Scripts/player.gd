@@ -31,11 +31,15 @@ func die():
 		respawn()  # ✅ Respawn only if hearts are left
 
 func respawn():
+	
 	position = initial_position
-	is_dead = false
 	Global.health = 100
+	is_dead = false
+	await get_tree().create_timer(0.5).timeout
 	$CollisionShape2D.disabled = false
 	set_physics_process(true)
+	
+	
 
 func player_movement():
 	var direction = 0

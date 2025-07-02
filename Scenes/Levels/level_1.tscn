@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://p2kgnrnnyinb"]
+[gd_scene load_steps=4 format=4 uid="uid://p2kgnrnnyinb"]
 
 [ext_resource type="TileSet" uid="uid://6gwu36b18ay5" path="res://Assets/terrain_tilemap.tres" id="1_tlcug"]
 [ext_resource type="PackedScene" uid="uid://dsnb28ukkayny" path="res://Scenes/Entity/player.tscn" id="2_4dpyx"]
-[ext_resource type="TileSet" path="res://Assets/InvisibleBlocks.tres" id="3_3mqfk"]
 [ext_resource type="PackedScene" uid="uid://dgo6m58fgffsi" path="res://Scenes/Environment/start_line.tscn" id="4_iixi8"]
 
 [node name="Level1" type="Node2D"]
@@ -12,9 +11,7 @@ tile_map_data = PackedByteArray("AABHACoAAAAIAAIAAABHACkAAAAIAAEAAABHACgAAAAIAAE
 tile_set = ExtResource("1_tlcug")
 
 [node name="InvisibleBlocks" type="TileMapLayer" parent="."]
-visible = false
 tile_map_data = PackedByteArray("AAAMABYAAAASAAgAAAAMABcAAAASAAgAAAAMABgAAAASAAgAAAAMABkAAAASAAgAAAAMABoAAAASAAgAAAAMABsAAAASAAgAAAAMABwAAAASAAgAAAAMAB0AAAASAAgAAAAMAB4AAAASAAgAAAAMABUAAAASAAgAAAA=")
-tile_set = ExtResource("3_3mqfk")
 
 [node name="Player" parent="." instance=ExtResource("2_4dpyx")]
 position = Vector2(97, 558)
