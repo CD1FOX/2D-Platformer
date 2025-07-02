@@ -316,6 +316,7 @@ grow_vertical = 1
 scale = Vector2(1.99999, 2)
 
 [node name="Menu" parent="." instance=ExtResource("12_gpwe1")]
+visible = false
 offset_left = -350.0
 offset_top = -415.0
 offset_right = -350.0
