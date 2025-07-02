@@ -7,6 +7,7 @@ var min_speed = 100
 var max_speed = 750 
 var acceleration = 250  
 var waiting_for_cooldown = false
+var player_detected = false
 
 @onready var animation = $AnimatedSprite2D
 @onready var trap_collision = $TrapCollision
@@ -49,8 +50,6 @@ func _physics_process(_delta: float) -> void:
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider and not collider.is_in_group("Player"):
-			animation.modulate.a = 1
-			trap_collision.disabled = false
 			match current_direction:
 				Direction.UP: animation.play("up_anim")
 				Direction.RIGHT: animation.play("right_anim")
@@ -60,10 +59,17 @@ func _physics_process(_delta: float) -> void:
 			waiting_for_cooldown = true
 			raycast.enabled = false
 			cooldown_timers[current_direction].start()
-		elif collider and collider.is_in_group("Player"): 
+		elif collider and collider.is_in_group("Player") and not player_detected:
+			player_detected = true
 			animation.modulate.a = 0.5
 			trap_collision.disabled = true
+			Global.health -= 50
 			
+			await get_tree().create_timer(0.3).timeout
+			
+			player_detected = false
+			trap_collision.disabled = false
+			animation.modulate.a = 1.0
 
 	move_and_slide()
 
