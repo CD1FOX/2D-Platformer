@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 220
 var gravity_force = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite = $AnimatedSprite2D
-var initial_position = Vector2(0, 0)
+var initial_position = position
 var is_dead = false
 
 #Jumping Logic
