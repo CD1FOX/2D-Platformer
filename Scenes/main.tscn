@@ -24,7 +24,7 @@ position = Vector2(179, 538)
 scale = Vector2(1.2, 1.2)
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
-position = Vector2(61, 529)
+position = Vector2(-118, 529)
 
 [node name="EndLine" parent="." instance=ExtResource("5_kry3j")]
 position = Vector2(1092, 433)
@@ -39,4 +39,7 @@ position = Vector2(486, 432)
 position = Vector2(-560, 432)
 
 [node name="SpikeTrap" parent="." instance=ExtResource("9_hptm8")]
-position = Vector2(-15, 576)
+position = Vector2(14, 576)
+
+[node name="Fire2" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(-184, 560)

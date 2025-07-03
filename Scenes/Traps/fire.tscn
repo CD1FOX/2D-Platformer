@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://qtvjbyicwj56"]
+[gd_scene load_steps=16 format=3 uid="uid://qtvjbyicwj56"]
 
-[ext_resource type="Script" uid="uid://cs1uqj3ihvtn3" path="res://Scenes/Traps/Scripts/fire.gd" id="1_1kf8v"]
+[ext_resource type="Script" uid="uid://jlmavxtpi24q" path="res://Scenes/Traps/Scripts/fire.gd" id="1_1kf8v"]
 [ext_resource type="Texture2D" uid="uid://nlok8i6yi5q1" path="res://Assets/Pixel Adventure!/Traps/Fire/Hit (16x32).png" id="1_mt6xh"]
 [ext_resource type="Texture2D" uid="uid://cg1jfyn8tmiu" path="res://Assets/Pixel Adventure!/Traps/Fire/Off.png" id="2_1kf8v"]
 [ext_resource type="Texture2D" uid="uid://cckbi4nynil5g" path="res://Assets/Pixel Adventure!/Traps/Fire/On (16x32).png" id="3_ftpt3"]
@@ -81,6 +81,9 @@ size = Vector2(14, 1.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn7qk"]
 size = Vector2(16, 4.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kf8v"]
+size = Vector2(12, 14)
+
 [node name="Fire" type="Area2D"]
 script = ExtResource("1_1kf8v")
 
@@ -99,5 +102,13 @@ shape = SubResource("RectangleShape2D_djrmw")
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_bn7qk")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_1kf8v")
+disabled = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

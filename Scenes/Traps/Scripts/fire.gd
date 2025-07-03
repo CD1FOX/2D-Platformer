@@ -1,36 +1,34 @@
 extends Area2D
 
-@onready var animated_sprite = $AnimatedSprite2D
-var player_on_trap = false
+@onready var anim = $AnimatedSprite2D
 
-func _ready():
-	animated_sprite.play("Off")  # Start with idle animation
+var already_stepped = false
+var fire_touched = false
 
-func _on_body_entered(body):
-	if body.name == "Player" and animated_sprite.animation == "Off":
-		# When player first steps on trap
-		player_on_trap = true
-		activate_trap()
+func _process(delta: float) -> void:
+	while fire_touched:
+		Global.health -= 10 * delta
+		await get_tree().create_timer(0.2).timeout
 
-func _on_body_exited(body):
-	if body.name == "Player":
-		player_on_trap = false
+func _on_body_entered(body: Node2D) -> void:
+	if not already_stepped and body.is_in_group("Player"):
+		already_stepped = true
+		anim.play("Hit")
+		await get_tree().create_timer(0.5).timeout
+		anim.play("On")
+		$Area2D/CollisionShape2D.disabled = false
+		await get_tree().create_timer(3).timeout
+		$Area2D/CollisionShape2D.disabled = true
+		anim.play("Off")
+		await get_tree().create_timer(1).timeout
+		already_stepped = false
 
-func activate_trap():
-	# Step 1: Play the hit animation (triggering the trap)
-	animated_sprite.play("Hit")
-	await animated_sprite.animation_finished
-	
-	# Step 2: Switch to fire animation (On state)
-	animated_sprite.play("On")
-	Global.health -= 10  # Initial damage when triggered
-	
-	# Keep damaging player while they stay on the burning trap
-	var fire_timer = 0.0
-	while fire_timer < 5.0 and player_on_trap:
-		fire_timer += get_process_delta_time()
-		Global.health -= 2 * get_process_delta_time()  # 2 damage per second
-		await get_tree().process_frame
-	
-	# Step 3: Return to idle state
-	animated_sprite.play("Off")
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		fire_touched = true
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		fire_touched = false
