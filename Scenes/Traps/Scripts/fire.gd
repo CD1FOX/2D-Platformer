@@ -7,7 +7,7 @@ var fire_touched = false
 
 func _process(delta: float) -> void:
 	while fire_touched:
-		Global.health -= 10 * delta
+		Global.health -= 5 * delta
 		await get_tree().create_timer(0.2).timeout
 
 func _on_body_entered(body: Node2D) -> void:
