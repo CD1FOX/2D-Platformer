@@ -41,7 +41,6 @@ func update_level_visibility():
 
 func _on_play_pressed() -> void:
 	Global.last_unlocked_level += 1
-	Global.save_progress()
 
 
 func _on_back_button_pressed() -> void:
