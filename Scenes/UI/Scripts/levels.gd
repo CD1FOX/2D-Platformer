@@ -5,10 +5,18 @@ extends Control
 @onready var level25_to_36 = $"Level25-36"
 
 var current_scene_counter = 1
+var selected_level_button: TextureButton = null
 
 func _ready():
 	update_visible_levels()
 	update_level_visibility()
+
+func handle_level_button_pressed(button: TextureButton) -> void:
+	if selected_level_button:
+		selected_level_button.modulate = Color.WHITE  # Reset previous button
+
+	selected_level_button = button
+	selected_level_button.modulate = Color.GREEN
 
 func _on_next_pressed() -> void:
 	if current_scene_counter < 3:
@@ -45,3 +53,18 @@ func _on_play_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+
+
+func _on_level_1_pressed() -> void:
+	var pressed_button = $"Level1-12/Level1" as TextureButton
+	handle_level_button_pressed(pressed_button)
+
+
+func _on_level_2_pressed() -> void:
+	var pressed_button = $"Level1-12/Level2" as TextureButton
+	handle_level_button_pressed(pressed_button)
+
+
+func _on_level_3_pressed() -> void:
+	var pressed_button = $"Level1-12/Level3" as TextureButton
+	handle_level_button_pressed(pressed_button)

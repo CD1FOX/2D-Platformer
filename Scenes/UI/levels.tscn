@@ -331,6 +331,9 @@ offset_bottom = 105.0
 scale = Vector2(5.22429, 4.33332)
 texture_normal = ExtResource("43_le7lr")
 
+[connection signal="pressed" from="Level1-12/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Level1-12/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Level1-12/Level3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
