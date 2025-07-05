@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var stepping_in_spike = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	while stepping_in_spike:
 		Global.health -= 15 
 		await get_tree().create_timer(0.4).timeout
