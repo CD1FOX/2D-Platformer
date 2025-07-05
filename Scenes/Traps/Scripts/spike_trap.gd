@@ -4,7 +4,7 @@ var stepping_in_spike = false
 
 func _process(delta: float) -> void:
 	while stepping_in_spike:
-		Global.health -= 15 * delta
+		Global.health -= 15 
 		await get_tree().create_timer(0.4).timeout
 
 
